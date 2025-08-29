@@ -1,2 +1,2 @@
 # videogame_consoles_market
-analisis del emrcado de consolas de videojuegos 
+analisis del mercado de consolas de videojuegos 
