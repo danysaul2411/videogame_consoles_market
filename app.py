@@ -81,8 +81,13 @@ col3.metric("🎮 Plataforma líder", top_platform)
 # Visualizaciones
 # ----------------------------------------------------
 
-tab1, tab2, tab3, tab4 = st.tabs(
-    ["📈 Evolución temporal", "🎮 Ventas por consola", "🌍 Comparativa regional", "🏢 Publishers"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "📈 Evolución temporal", 
+    "🎮 Ventas por consola", 
+    "🌍 Comparativa regional", 
+    "🏢 Publishers",
+    "🔎 Dispersión"
+])
 
 with tab1:
     st.subheader("Evolución de ventas globales en el tiempo")
@@ -121,6 +126,19 @@ with tab4:
     fig4 = px.bar(top_publishers, x="Publisher", y="Global_Sales",
                   title="Top 15 publishers")
     st.plotly_chart(fig4, use_container_width=True)
+
+with tab5:
+    st.subheader("Relación entre Año y Ventas Globales")
+    fig5 = px.scatter(
+        df_filtered,
+        x="Year",
+        y="Global_Sales",
+        size="Global_Sales",  # burbuja más grande = más ventas
+        color="Genre",        # color por género
+        hover_name="Name",    # al pasar el mouse muestra el nombre del juego
+        title="Dispersión de juegos por ventas y año"
+    )
+    st.plotly_chart(fig5, use_container_width=True)
 
 # ----------------------------------------------------
 # Tabla interactiva
