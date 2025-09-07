@@ -42,3 +42,6 @@ pip install -r requirements.txt
 Ejecuta la aplicación:
 
 streamlit run app.py
+
+
+para ver el resultado final de este proyecto te invito a visitar el siguiente link= https://videogame-consoles-market-3.onrender.com
